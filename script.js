@@ -15,3 +15,11 @@ function searchCountries() {
     success: showCountriesList
   })
 }
+
+function showCountriesList(resp) {
+  countriesList.empty();
+  resp.forEach(function(item) {
+    var countriesListElement = $("<li>" + item.name + "</li>");
+    countriesList.append(countriesListElement);
+  })
+}
